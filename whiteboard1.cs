@@ -2,8 +2,9 @@ public static class TimeComplexity
 {
 	public static void Main(string[] args)
 	{
+		Console.WriteLine($"Bubble: {ShortBinarySearch(234)}");
 		Console.WriteLine($"Binary: {BinarySearch(234)}");
-		Console.WriteLine($"Bubble: {BubbleSort(234)}");
+		Console.WriteLine($"Bubble: {BubbleSort(500)}");
 	}
 	public static int ShortBinarySearch(int val, int[] array = new int[] {23, 1423, 4332, 1213, 432, 212})
 	{
