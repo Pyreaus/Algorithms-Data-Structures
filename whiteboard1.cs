@@ -1,11 +1,11 @@
-
 public static class TimeComplexity
 {
 	public static void Main(string[] args)
 	{
-		Console.WriteLine(BinarySearch(234));
+		Console.WriteLine($"Binary: {BinarySearch(234)}");
+		Console.WriteLine($"Bubble: {BubbleSort(234)}");
 	}
-	public static int BinarySearch(int val, int[] array = new int[] {23, 1423, 4332, 1213, 432, 212})
+	public static int ShortBinarySearch(int val, int[] array = new int[] {23, 1423, 4332, 1213, 432, 212})
 	{
 		Array.Sort(array);
 		int sA = 0, eA = array.Length - 1;
@@ -18,14 +18,7 @@ public static class TimeComplexity
 		}
 		return -1; 
 	}
-}
-
-public static class TimeComplexity2
-{
-	public static void Main(string[] args)
-	{
-		Console.WriteLine(BubbleSort(234));
-	}
+	
 	public static int BubbleSort(int val, int[] array = new int[] {23, 1423, 4332, 1213, 432, 212})
 	{
 		int temp = 0;
@@ -42,3 +35,19 @@ public static class TimeComplexity2
 			}
 		}
 	}
+	public static int BinarySearch(int val, int[] array = new int[] { 23, 1423, 4332, 1213, 432, 212 })
+    	{
+	        Array.Sort(array);
+	        int sA = 0, eA = array.Length - 1;
+	
+	        while (sA <= eA) // Change from sA < eA to sA <= eA
+	        {
+	            int mA = (sA + eA) / 2;
+	
+	            if (array[mA] == val) return mA;
+	            if (array[mA] < val) sA = mA + 1;
+	            else eA = mA - 1;
+	        }
+	        return -1;
+	}
+}
